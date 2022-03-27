@@ -13,6 +13,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+
 Route::get('/', 'PrincipalController@principal')->name('site.index');
 Route::get('/sobre-nos', 'SobreNosController@sobre')->name('site.sobrenos');
 Route::get('/contato', 'ContatoController@contato')->name('site.contato');
@@ -32,3 +33,4 @@ Route::fallback(function() {
     echo 'A rota acessada não existe, <a href="'.route('site.index').'"> clique aqui</a> para voltar.';
 }
 );
+
