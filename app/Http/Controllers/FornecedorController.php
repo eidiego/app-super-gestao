@@ -8,23 +8,29 @@ class FornecedorController extends Controller
 {
     public function index() {
         $fornecedores = [
-            'Fornecedor 1',
-            'Fornecedor 2',
-            'Fornecedor 3',
-            'Fornecedor 4',
-            'Fornecedor as',
-            'Fornecedor adasdqs',
-            'Fornecedor 1a',
-            'Fornecedor a',
-            'Fornecedor aaass',
-            'Fornecedor sasa',
-            'Fornecedor asdqw',
-            'Fornecedor aszasd',
-            'Fornecedor adasd',
-            'Fornecedor 1xvcbs',
-            'Fornecedor 1dsafqwe',
-            'Fornecedor 1asdfhb',
-    ];
+            0 => [
+                'nome' => 'Fornecedor 1',
+                'status' => 'N',
+                'cnpj' => '0',
+                'ddd' => '', //São Paulo (SP)
+                'telefone' => '0000-0000'
+            ],
+            1 => [
+                'nome' => 'Fornecedor 2',
+                'status' => 'S',
+                'cnpj' => null,
+                'ddd' => '85', //Fortaleza (CE)
+                'telefone' => '0000-0000'
+            ],
+            2 => [
+                'nome' => 'Fornecedor 2',
+                'status' => 'S',
+                'cnpj' => null,
+                'ddd' => '32', //Juiz de fora (MG)
+                'telefone' => '0000-0000'
+            ]
+        ];
+
         return view('app.fornecedor.index', compact('fornecedores'));
     }
 }
