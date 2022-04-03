@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class AlterFornecedoresSoftdelete extends Migration
+class CreateLogAcessosTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,10 @@ class AlterFornecedoresSoftdelete extends Migration
      */
     public function up()
     {
-
-        Schema::table('fornecedores', function (Blueprint $table) {
-            $table->SoftDeletes();
+        Schema::create('log_acessos', function (Blueprint $table) {
+            $table->id();
+            $table->string('log', 200);
+            $table->timestamps();
         });
     }
 
@@ -26,8 +27,6 @@ class AlterFornecedoresSoftdelete extends Migration
      */
     public function down()
     {
-        Schema::table('fornecedores', function (Blueprint $table) {
-            $table->dropSoftDeletes();
-         });
+        Schema::dropIfExists('log_acessos');
     }
 }
